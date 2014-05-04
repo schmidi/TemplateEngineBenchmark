@@ -59,7 +59,7 @@ function getResults($scenario, $scenario_name, $maxRuns) {
 
             if($r['time_elapsed'] > $maxTime)
                 $maxTime = $r['time_elapsed'];
-            if($r['time_elapsed'] < $minTime);
+            if($r['time_elapsed'] < $minTime)
                 $minTime = $r['time_elapsed'];
 
         }
