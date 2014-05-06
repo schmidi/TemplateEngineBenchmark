@@ -33,7 +33,6 @@ function getResults($scenario, $scenario_name, $maxRuns) {
     $minTime = 0;
     $avgTime = 0;
 
-
     // calculate statistical values
 
     $resultCount = count($results);
@@ -66,7 +65,6 @@ function getResults($scenario, $scenario_name, $maxRuns) {
 
         $avgTime += $r['time_elapsed'];
         $avgMemory += $r['memory_usage'];
-
     }
 
     $avgTime /= $resultCount;
@@ -86,12 +84,12 @@ function getResults($scenario, $scenario_name, $maxRuns) {
 function mainLoop() {
 
     $maxRuns =  20;
-    $params = array('rows' => 20001);
+    $params = array('rows' => 20000);
 
     $scenarios = array(
         new PearRunner($params),
-        new SmartyRunner($params),
         new TwigRunner($params),
+        new SmartyRunner($params),
         new RainRunner($params)
     );
 

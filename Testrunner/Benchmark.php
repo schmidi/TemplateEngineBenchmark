@@ -27,7 +27,7 @@ class Benchmark {
         if($this->running)
             return array(
                 'time_elapsed' => microtime(true) - $this->startTime,
-                "memory_usage" => abs((memory_get_usage() - $this->memory) / (1024 * 1024))
+                "memory_usage" => abs((memory_get_usage() - $this->memory) / 1024)
             );
         else
             throw new BenchmarkException("Benchmark not started");
@@ -41,7 +41,6 @@ class Benchmark {
         $this->startTime = 0;
 
     }
-
 
 }
 
