@@ -7,6 +7,7 @@ abstract class DataClass {
     protected $params;
     protected $data;
     protected $rows;
+    protected $numberOfFileOperations;
 
     public function __construct($params = null) {
 
@@ -16,6 +17,7 @@ abstract class DataClass {
             $this->params = $params;
 
         $this->generate_data();
+        $this->numberOfFileOperations = 0;
 
     }
 
@@ -33,5 +35,10 @@ abstract class DataClass {
 
 
     }
+
+    public function getNumberOfFileOperations() {
+        return $this->numberOfFileOperations;
+    }
+
 
 } 

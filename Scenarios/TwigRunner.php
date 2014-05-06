@@ -27,7 +27,6 @@ class TwigRunner extends DataClass implements RunnerInterface {
             'table' => $this->data
         ));
 
-
     }
 
 

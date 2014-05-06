@@ -33,6 +33,8 @@ class PearRunner extends DataClass implements RunnerInterface {
 
         $engine->show();
 
+        $this->numberOfFileOperations = $engine->getNumberOfFileOperations();
+
     }
 
 

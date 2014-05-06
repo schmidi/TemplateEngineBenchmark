@@ -393,6 +393,8 @@ class HTML_Template_IT
         'preserve_input'=> true
     );
 
+    var $numberOfFileOperations;
+
     /**
      * Builds some complex regular expressions and optinally sets the
      * file root directory.
@@ -425,7 +427,14 @@ class HTML_Template_IT
                              ')\s+-->(.*)<!--\s+END\s+\1\s+-->@sm';
 
         $this->setRoot($root);
+
+        $this->numberOfFileOperations = 0;
     } // end constructor
+
+
+    function getNumberOfFileOperations(){
+        return $this->numberOfFileOperations;
+    }
 
 
     /**
@@ -1086,6 +1095,7 @@ class HTML_Template_IT
         }
 
         $content = fread($fh, $fsize);
+        $this->numberOfFileOperations++;
         fclose($fh);
 
         return preg_replace(
